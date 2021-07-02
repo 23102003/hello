@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+  #title {
+  font-size:3vw;
+  padding:1.5vw;
+  margin-bottom:3vw;
+    text-align: center;
+    background-color: rgb(100, 177, 207);
+    color: white;
+    text-shadow: .2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.548);
+  }
+  #Add-item {
+      margin:2vw 13vw;
+      border: .3vw solid black;
+      border-radius:.7vw;
+      box-shadow: 0.03vw 0.15vw 0.25vw rgba(0, 0, 0, 0.685);
+    }
+    /* .seprator{
+      background-color:rgb(100, 177, 207);
+      height:2vw;
+  } */
+  .box {
+    display: flex;
+  }
+  .bt1 {
+    text-align: right;
+    margin-right:1.5vw;
+  }
+  #add-item-list,#reset{
+      padding:0.3vw 1.2vw;
+      font-size:1.35vw;
+  }
+  div p {
+    margin: 1vw;
+    font-size: 1.7vw;
+    text-decoration: underline;
+  }
+  #item-quantity{
+      margin-top:1.5vw;
+  }
+  #item-des{
+      margin-top:1.8vw;
+  }
+  .right{
+      margin-left:3vw;
+  }
+  div input {
+    margin: .8vw 0vw;
+    border: 0.16vw solid black;
+    font-size: 1.2vw;
+  }
+  #ex th{
+      background-color: white;
+  }
+  #Item-name {
+    width: 23vw;
+    height: 2vw;
+    border-radius: 0.2vw;
+  }
+  #Item-quantity {
+    width: 11vw;
+    height: 2vw;
+    
+    border-radius: 0.2vw;
+  }
+  #Quantity-unit {
+    width: 7vw;
+    height: 2vw;
+    border: 0.16vw solid black;
+    font-size:1vw;
+    border-radius: 0.2vw;
+  }
+  #Quantity-unit option {
+    text-align: center;
+  }
+  #Discription {
+    width:54vw;
+    height: 10vw;
+    border: 0.16vw solid black;
+    margin: 1.3vw 0.4vw;
+    font-size: 1.35vw;
+    resize: none;
+    border-radius: 0.2vw;
+  }
+  table {
+    border-collapse: collapse;
+    margin:2vw 9vw;
+    border-radius:1vw;
+    width: 81vw;
+  }
+  #reset{
+      margin-left:1vw;
+  }
+  table th{
+      font-size: 1.6vw;
+      color: white;
+      text-shadow: .2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.548);
+      background-color: rgb(100, 177, 207);
+      padding: 0.4vw 1.3vw;
+  }
+  #sn{
+      width:5vw;
+  }
+  #I{
+      width:17vw;
+  }
+  #U{
+      width:6.5vw;
+  }
+  #Q{
+      width:10vw;
+  }
+  #R{
+      width:11vw;
+  }
+  td{
+      padding:1vw;
+      font-size: 1.4vw;
+  }
+  td button{
+      padding:.3vw .8vw;
+      color: rgb(255, 255, 255);
+      border-radius:.35vw;
+      text-shadow: .2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.548);
+      margin-left:.31vw;
+      font-size:1.1vw;
+      background-color: rgb(100, 177, 207);
+  }
+  .bt2{
+      float: right;
+      margin: 2vw;
+  }
+  .bt1 input{
+      border: 0.12vw solid black;
+      border-radius:.35vw;
+      color: white;
+      text-shadow: .2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.548);
+      background-color: rgb(95, 168, 197);
+  }
+  .bt2 button{
+      border: 0.16vw solid black;
+      font-size:1.5vw;
+      padding:0.4vw 1vw;
+      border-radius:.35vw;
+      margin:0 .7vw;
+      color: white;
+      text-shadow: .2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.548);
+      background-color: rgb(91, 161, 189);
+  }
+  h2{
+      border-top-right-radius:0.5vw;
+      border-top-left-radius:0.5vw;
+      position: relative;
+      top:-.1vw;
+      text-align: center;
+      background-color: rgb(100, 177, 207);
+      padding:.8vw;
+      color: white;
+      text-shadow: .2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.548);
+  }
+  button:hover,#add-item-list:hover,#reset:hover{
+      background-color: rgb(51, 130, 163);
+  }
+  table button:hover{
+      background-color: red;
+  }

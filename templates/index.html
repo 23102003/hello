@@ -1,0 +1,153 @@
+{%extends 'base.html'%}
+{%block title%}Requirement Request | IIT Delhi{%endblock title%}
+{%block body%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="icon" href="wallpaper2you_341526.jpg" type="image/icon type">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    {%load static%}
+  </head>
+  <body>
+    <h1 id="title">Requirement Request</h1>
+    <form action="" id="Add-item">
+      <h2>Fill Details-To Add Item</h2>
+      <div class="box">
+        <div class="left">
+          <p id="item-name">Item</p>
+          <p id="item-quantity">Quantity</p>
+          <p id="item-des">Description</p>
+        </div>
+        <div class="right">
+          <input id="Item-name" placeholder="Item-Name" type="text"/>
+          <div>
+            <input
+              id="Item-quantity"
+              min="0"
+              placeholder="123"
+              type="number"
+            />
+            <select name="Unit" id="Quantity-unit">
+              <option value="">--Unit--</option>
+              <option value="kilogram">K.G</option>
+              <option value="gram">g</option>
+              <option value="litre">L</option>
+              <option value="mililitre">ml</option>
+              <option value="peices">Pcs</option>
+            </select>
+          </div>
+          <textarea
+            name="discription"
+            placeholder="--Discription--in--min--50--words"
+            id="Discription"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+      </div>
+      <div class="bt1">
+        <input
+          onclick="add()"
+          type="button"
+          id="add-item-list"
+          value="Add-Item"
+        />
+        <input type="reset" id="reset" value="Reset" />
+      </div>
+    </form>
+    <div class="seprator"></div>
+    <table border="2">
+      <tr>
+        <th id="sn">S.no</th>
+        <th id="I">Item</th>
+        <th id="Q">Quantity</th>
+        <th id="U">Unit</th>
+        <th id="d">Discription</th>
+        <th id="R">Remove</th>
+      </tr>
+      <tr id="ex">
+        <th height="35"></th>
+      </tr>
+    </table>
+    <div class="bt2">
+      <button id="ct">Clear Table</button>
+      <button id="submit" type="submit" >Submit</button>
+    </div>
+    <script>
+    var counter = 0;
+function add() {
+    const ex = document.getElementById('ex');
+    var itemn = document.getElementById('Item-name').value;
+    var itemq = document.getElementById('Item-quantity').value;
+    var itemu = document.getElementById('Quantity-unit').value;
+    var itemd =document.getElementById('Discription').value;
+    if(itemd.length&&itemn.length&&itemq!=NaN&&itemu)
+    {
+    if(itemd.length<45)
+    {
+        alert("Discription length should be minimum of 50 words");
+    }
+    else
+    { counter++;
+        var text = `<tr>
+       <td  class="c${counter}">${counter}</td>
+       <td>${itemn}</td>
+       <td>${itemq}</td>
+       <td>${itemu}</td>
+       <td><details>
+       <summary>${itemd.substr(0,30) + "...."}</summary>
+       <p>${itemd}</p>
+     </details></td>
+       <td><button  id="c${counter}"  onclick="remove(this)">Remove-item</button></td>
+   </tr>`;
+    ex.insertAdjacentHTML("beforebegin", text);
+    }
+}
+    else
+    {
+        alert("Enter All Details to ADD item in List");
+    }
+}
+function remove(x) {
+    var t = x.id;
+    var inti = parseInt(t.substr(1, 1));
+    while (inti < counter) {
+        var s = ".c" + (inti + 1);
+        var change = s.replace(inti + 1, inti).substr(1, 2);
+        document.querySelectorAll(s)[0].innerText = inti;
+        document.querySelectorAll(s)[0].className = change;
+        document.getElementById(s.substr(1, 2)).id = change;
+        inti++;
+    }
+    counter--;
+    x.parentNode.parentNode.remove();
+}
+document.getElementById('ct').addEventListener("click",clear);
+function clear(){
+    if(confirm("To Clear the List press OK"))
+    {
+    inti=1;
+    while (inti <= counter) {
+        var s =".c" +inti;
+        document.querySelectorAll(s)[0].parentNode.remove();
+        inti++;
+    }
+    counter=0;
+    }
+}
+document.getElementById('submit').addEventListener("click",valid);
+function valid(){
+    if(counter<=0)
+    {
+        alert("To proceed Add Items in The list");
+        return false;
+    }
+    else
+    document.getElementById("Add-item").submit();
+}</script>
+  </body>
+</html>
+{%endblock body%}
